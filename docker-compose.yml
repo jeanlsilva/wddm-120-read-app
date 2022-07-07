@@ -1,0 +1,17 @@
+version: '3'
+services:
+  database:
+    image: postgres:12
+    restart: always
+    container_name: 'wddm-120-create-read-app'
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: cra
+    volumes:
+    - database:/var/lib/postgresql/data
+
+volumes: 
+  database: {}
